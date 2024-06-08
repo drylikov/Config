@@ -1,0 +1,42 @@
+{
+  "name": "@ajv-validator/config",
+  "version": "0.5.0",
+  "description": "Shared typescript, eslint and prettier configuration",
+  "main": "index.js",
+  "scripts": {
+    "prettier:write": "prettier --write './**/*.{md,json,yaml,js,ts}'",
+    "prettier:check": "prettier --list-different './**/*.{md,json,yaml,js,ts}'",
+    "eslint": "eslint --ext .ts ./src/**/*",
+    "tsc": "tsc --noEmit",
+    "test": "npm run prettier:check && npm run eslint && npm run tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajv-validator/config.git"
+  },
+  "author": "Evgeny Poberezkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajv-validator/config/issues"
+  },
+  "homepage": "https://github.com/ajv-validator/config#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.0.3",
+    "typescript": "^4.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,json,yaml,js,ts}": "prettier --write"
+  },
+  "prettier": "./prettierrc.json"
+}
