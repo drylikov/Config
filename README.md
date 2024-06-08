@@ -1,3 +1,3 @@
 # config
 
-Shared typescript, eslint and prettier configuration
+Shared TypeScript, eslint and prettier configuration.
